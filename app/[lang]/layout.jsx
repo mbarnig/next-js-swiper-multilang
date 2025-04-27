@@ -1,3 +1,4 @@
+import './globals.css';
 export default function LangLayout({ children, params }) {
   const { lang } = params;
   return (
