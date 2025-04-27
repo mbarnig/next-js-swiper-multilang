@@ -1,0 +1,76 @@
+/* Reset de base pour une meilleure consistance */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Corps de la page */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Pas de scroll horizontal */
+  font-family: system-ui, sans-serif;
+}
+
+/* Classes TailwindCSS */
+body {
+  @apply bg-white text-gray-800;
+}
+
+/* Rendre toutes les images responsives dans le contenu dynamique */
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Rendre les iframes, vidéos responsives aussi */
+.content iframe,
+.content video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ajuster les paragraphes dans le contenu */
+.content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Titres dans le contenu */
+.content h1,
+.content h2,
+.content h3,
+.content h4 {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* Pour Swiper navigation boutons */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #4b5563; /* Gris Tailwind */
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 9999px;
+  padding: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(107, 114, 128, 0.9);
+}
+
+/* Swiper pagination points */
+.swiper-pagination-bullet {
+  background-color: #9ca3af; /* Gris clair */
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: #4b5563; /* Gris foncé */
+}
