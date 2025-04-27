@@ -13,7 +13,6 @@ export default function PostSwiper({ posts }) {
   return (
     <div className="h-full w-full">
       <Swiper
-        modules={[Navigation, Pagination, EffectFade]}
         spaceBetween={50}
         slidesPerView={1}
         navigation
