@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -8,8 +7,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
 export default function PostSwiper({ posts }) {
-  const swiperRef = useRef();
-
   return (
     <div className="h-full w-full">
       <Swiper
@@ -19,12 +16,13 @@ export default function PostSwiper({ posts }) {
         pagination={{ clickable: true }}
         effect="fade"
         fadeEffect={{ crossFade: true }}
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
-        onSlideChange={() => {
-          // Scroll automatique vers le haut
-          const activeSlide = document.querySelector('.swiper-slide-active');
+        onSlideChangeTransitionEnd={(swiper) => {
+          const activeSlide = swiper.slides[swiper.activeIndex];
           if (activeSlide) {
-            activeSlide.scrollTo({ top: 0, behavior: 'smooth' });
+            const scrollable = activeSlide.querySelector('.content');
+            if (scrollable) {
+              scrollable.scrollTo({ top: 0, behavior: 'smooth' });
+            }
           }
         }}
         className="h-full"
