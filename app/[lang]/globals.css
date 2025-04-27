@@ -21,6 +21,11 @@ body {
 }
 
 /* Rendre toutes les images responsives dans le contenu dynamique */
+
+.content {
+  overflow-y: auto;
+}
+
 .content img {
   max-width: 100%;
   height: auto;
