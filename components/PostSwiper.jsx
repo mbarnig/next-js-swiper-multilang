@@ -1,7 +1,6 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectFade } from 'swiper'; // <-- Import correct ici !
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -11,13 +10,9 @@ export default function PostSwiper({ posts }) {
   return (
     <div className="relative h-full">
       <Swiper
-        modules={[Navigation, Pagination, EffectFade]}
         spaceBetween={50}
         slidesPerView={1}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }}
+        navigation
         pagination={{ clickable: true }}
         effect="fade"
         fadeEffect={{ crossFade: true }}
